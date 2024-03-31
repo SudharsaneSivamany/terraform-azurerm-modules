@@ -3,7 +3,7 @@ Management group module is used to create management group and add subscriptions
 
 ```hcl
 module "management-group" {
-    source           = "SudharsaneSivamany/modules//modules/management-group/azurerm"
+    source           = "SudharsaneSivamany/modules/azurerm//modules/management-group"
     management_group = [{    parent           = null # if group has to be created under tenant root group
                              name             = "group1"
                              subscription_ids = ["subs_id_1, subs_id_2"]}] 
