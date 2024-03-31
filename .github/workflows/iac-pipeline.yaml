@@ -1,20 +1,20 @@
-name: Network-hub
-on:
-  push:
-    branches:
-      - main
-jobs:
-  iac:
-        runs-on: ubuntu-latest
-        permissions: # <- this section is needed for workload identity
-          contents: 'read'
-          id-token: 'write'
-        steps:
-        - uses: azure/login@v1
-          with:
-            client-id: ${{ secrets.CLIENT_ID }}
-            tenant-id: ${{ secrets.TENANT_ID }}
-            subscription-id: ${{ secrets.SUBSCRIPTION_ID }}
-            enable-AzPSSession: true
-        - name: 'Run az commands'
-          run: az account show
+# name: Network-hub
+# on:
+#   push:
+#     branches:
+#       - main
+# jobs:
+#   iac:
+#         runs-on: ubuntu-latest
+#         permissions: # <- this section is needed for workload identity
+#           contents: 'read'
+#           id-token: 'write'
+#         steps:
+#         - uses: azure/login@v1
+#           with:
+#             client-id: ${{ secrets.CLIENT_ID }}
+#             tenant-id: ${{ secrets.TENANT_ID }}
+#             subscription-id: ${{ secrets.SUBSCRIPTION_ID }}
+#             enable-AzPSSession: true
+#         - name: 'Run az commands'
+#           run: az account show
